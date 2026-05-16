@@ -1,0 +1,11 @@
+# Request - what the client sends to the server
+int32 width
+int32 height
+float64 wall_probability
+
+---
+
+# Response - what the server sends back to the client
+string maze_data
+int32 width
+int32 height
