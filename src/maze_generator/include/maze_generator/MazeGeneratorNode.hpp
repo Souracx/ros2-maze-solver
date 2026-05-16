@@ -7,19 +7,17 @@
 
 /**
  * MazeGeneratorNode
- * 
  * ROS2 Node that provides a service to generate random mazes.
  * Inherits from rclcpp::Node 
  * 
- * Node: 
- * - Provides a service "generate_maze" that clients can call
- * - Uses MazeGeneratorSubsystem to generate the actual maze
- * - Returns maze data to the client via service response
+ * The Node: 
+ *  Provides a service "generate_maze" that clients can call
+ *  Uses MazeGeneratorSubsystem to generate the actual maze
+ *  @returns maze data to the client via service response
  */
 class MazeGeneratorNode : public rclcpp::Node {
 public:
   /**
-   * Constructor
    * Initializes the node, declares parameters, and sets up the service server
    */
   MazeGeneratorNode();

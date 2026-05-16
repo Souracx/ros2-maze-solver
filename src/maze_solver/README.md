@@ -39,7 +39,7 @@ colcon build --packages-select maze_solver
 ros2 run maze_generator maze_generator_node
 ```
 
-### Run the Solver
+### Run this package 
 
 ```bash
 ros2 run maze_solver maze_solver_node

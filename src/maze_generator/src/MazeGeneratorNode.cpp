@@ -5,12 +5,10 @@ MazeGeneratorNode::MazeGeneratorNode() : Node("maze_generator_node") {
   declareAndGetParameters();
 
   // Create the subsystem with parameters
-  m_mazeSubsystem = std::make_unique<MazeGeneratorSubsystem>(
-      m_mazeWidth, m_mazeHeight, m_wallProbability);
+  m_mazeSubsystem = std::make_unique<MazeGeneratorSubsystem>(m_mazeWidth, m_mazeHeight, m_wallProbability);
 
   // Create service server
-  m_generateMazeService = this->create_service<maze_generator::srv::GenerateMaze>(
-    "generate_maze",
+  m_generateMazeService = this->create_service<maze_generator::srv::GenerateMaze>("generate_maze",
     std::bind(&MazeGeneratorNode::generateMazeCallback, this,
       std::placeholders::_1, std::placeholders::_2));
 

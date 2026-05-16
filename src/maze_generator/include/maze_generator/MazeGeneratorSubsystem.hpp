@@ -7,7 +7,6 @@
  * MazeGeneratorSubsystem
  * 
  * Generates random mazes with configurable dimensions and wall probability.
- * This subsystem contains pure C++ maze generation logic and does NOT depend on ROS2.
  * Uses probabilistic wall placement with guaranteed walkable start and goal areas.
  */
 class MazeGeneratorSubsystem {
