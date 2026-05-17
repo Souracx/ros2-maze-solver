@@ -4,14 +4,42 @@ A complete ROS2 system that generates random mazes and solves them using the A* 
 
 ## Project Overview
 
-**Architecture:**
+### Architecture:
 
 **maze_generator:** Stateless service server implementing probabilistic Cellular Automata for maze generation. Exposes `GenerateMaze` service with configurable parameters (width, height, wall_probability).
 
 **maze_solver:** Asynchronous service client implementing the A* pathfinding algorithm with Manhattan distance heuristic. Subscribers to service responses via callbacks, avoiding blocking operations on the ROS executor.
 
 
-## How to start Quick Start
+### Communication Protocol:
+ 
+**Service:** Request-response pattern for maze data transfer (synchronous client-server)
+**Topic:** Publisher-subscriber pattern for metrics dissemination (asynchronous)
+**Message serialization:** Custom ROS2 message types (`GenerateMaze.srv`, `MazeSolution.msg`)
+
+## Packages
+ 
+### Package A: maze_generator
+ 
+Generates random mazes.
+ 
+**Features:**
+- Probabilistic wall placement
+- Configurable dimensions
+- Service-based interface
+- Parameters for customization
+
+### Package B: maze_solver
+ 
+Solves mazes using A* pathfinding.
+ 
+**Features:**
+- A* algorithm with Manhattan distance heuristic
+- Service client architecture
+- Metrics publishing (path length, nodes explored)
+- Async service communication
+
+## How to start : Quick Start
  
 ### Terminal 1: Start Maze Generator
  
@@ -28,8 +56,6 @@ cd ~/art_mini_project
 source install/setup.bash
 ros2 run maze_solver maze_solver_node
 ```
-
-
 
 ## Building
  
